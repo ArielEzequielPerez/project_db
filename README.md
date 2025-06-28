@@ -9,9 +9,15 @@ Este proyecto levanta una instancia de MySQL dentro de un contenedor Docker, acc
 
 ## 📦 Estructura del proyecto
 
+
 project_db/
+
+
 ├── docker-compose.yml
+
+
 └── schemas/ # Directorio que se monta como volumen (persistencia)
+
 
 
 ## 🚀 Instrucciones
