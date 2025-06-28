@@ -1,18 +1,16 @@
-version: "3"
-
 services:
   db:
     image: mysql
-    container_name: MYSQL
-    ports: 
+    container_name: ${DATABASE_HOST}
+    ports:
       - "3307:3306"
-    environment: 
-      MYSQL_ROOT_PASSWORD: "admin"
+    environment:
+      MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
+      MYSQL_DATABASE: ${MYSQL_DATABASE}
     volumes:
       - ./schemas:/var/lib/mysql
     networks:
-      -       - pereza-network
-      
+      - pereza-network
 networks:
   pereza-network:
     external: true

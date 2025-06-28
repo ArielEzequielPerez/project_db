@@ -21,10 +21,14 @@ project_db/
 
 
 ## 🚀 Instrucciones
-### 1. Crear carpeta para persistencia:
+### 1. Crear carpeta para persistencia y .env :
 ```bash
 mkdir schemas
 ```
+```bash
+cp .env .env.example
+```
+
 
 ### 2. Crear red Docker externa (una sola vez)
 
@@ -71,3 +75,14 @@ Desde tu máquina (localhost):
         allowPublicKeyRetrieval = true
         useSSL = false
 
+
+### Posibles complicaciones a la hora de usar otras database
+
+# Detener y eliminar todo (incluyendo volúmenes)
+docker compose down -v
+
+# Eliminar el directorio de datos MySQL si existe
+sudo rm -rf ./schemas
+
+# Iniciar de nuevo
+docker compose up
